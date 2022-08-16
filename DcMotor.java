@@ -15,7 +15,7 @@ public class DcMotor {
   private boolean polarization = true;
   private DcMotor.Direction direction = DcMotor.Direction.FORWARD;
   private double power = 0;
-  private DcMotor.ZeroPowerBehavior brakeMode = DcMotor.ZeroPowerBehavior.
+  private DcMotor.ZeroPowerBehavior brakeMode = DcMotor.ZeroPowerBehavior.FLOAT;
 
   public DcMotor(){
     polarization = (Math.random()>0.5);
@@ -29,10 +29,10 @@ public class DcMotor {
   }
 
   public void setZeroPowerBehavior(DcMotor.ZeroPowerBehavior brakeState) {
-    brakeOn = brakeState;
+    brakeMode = brakeState;
   }
   public DcMotor.ZeroPowerBehavior getZeroPowerBehavior() {
-    return brakeOn;
+    return brakeMode;
   }
 
   public void setPower(double newPower) {
