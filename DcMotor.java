@@ -36,9 +36,12 @@ public class DcMotor {
   }
 
   public void setPower(double newPower) {
-    power = newPower; 
+    power = clamp(newPower, 0,1); 
   }
   public double getPower() {
     return power;
+  }
+  double clamp(double val, double min, double max){
+    return Math.max(min,Math.min(max, val));
   }
 }
