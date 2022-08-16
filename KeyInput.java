@@ -4,6 +4,10 @@ import java.awt.event.KeyEvent;
 import javax.swing.*;
 
 public class KeyInput {
+    public KeyObj keyUp = new KeyObj(false, "keyUp");
+    public KeyObj keyDown = new KeyObj(false, "keyDown");
+    public KeyObj keyRight = new KeyObj(false, "keyRight");
+    public KeyObj keyLeft = new KeyObj(false, "keyLeft");
 
     public KeyInput() {
         JFrame frame = new JFrame();
@@ -34,22 +38,43 @@ public class KeyInput {
             int rightCount = 0;
             int leftCount = 0;
 
+            public boolean getKeyUp() {
+                return keyUp.getState();
+            }
+
             @Override
             public void keyPressed(KeyEvent e) {
                 int keyCode = e.getKeyCode();
                 switch (keyCode) {
                     case KeyEvent.VK_UP:
                         up.setText("Up: " + Integer.toString(upCount++));
+                        keyUp.setState(true);
                         break;
                     case KeyEvent.VK_DOWN:
                         down.setText("Down: " + Integer.toString(downCount++));
+                        keyDown.setState(true);
                         break;
                     case KeyEvent.VK_RIGHT:
                         right.setText("Right: " + Integer.toString(rightCount++));
+                        keyRight.setState(true);
                         break;
                     case KeyEvent.VK_LEFT:
                         left.setText("Left: " + Integer.toString(leftCount++));
+                        keyLeft.setState(true);
                         break;
+                }
+
+                if (keyUp.getState() == true) {
+                    System.out.println("keyUp: " + keyUp.getState());
+                }
+                if (keyDown.getState() == true) {
+                    System.out.println("keyDown: " + keyDown.getState());
+                }
+                if (keyRight.getState() == true) {
+                    System.out.println("keyRight: " + keyRight.getState());
+                }
+                if (keyLeft.getState() == true) {
+                    System.out.println("keyLeft: " + keyLeft.getState());
                 }
             }
 
@@ -59,6 +84,10 @@ public class KeyInput {
                 down.setText("Up: " + 0);
                 right.setText("Up: " + 0);
                 left.setText("Up: " + 0);
+                keyUp.setState(false);
+                keyDown.setState(false);
+                keyRight.setState(false);
+                keyLeft.setState(false);
             }
 
             @Override
