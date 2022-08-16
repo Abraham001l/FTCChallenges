@@ -1,6 +1,13 @@
 import java.util.*;
 
 public class OpMode {
+
+  public Telemetry telemtry;
+  public GamePad gamepad1;
+  public GamePad gamepad2;
+  public HardwareMap hardwareMap;
+
+  
   public void init() {
     // your code
   }
