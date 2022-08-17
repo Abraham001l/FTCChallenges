@@ -1,11 +1,19 @@
 import java.util.*;
 import javax.swing.*;
+
+import netscape.javascript.JSObject;
+
 import java.awt.event.KeyListener;
 import java.awt.event.KeyEvent;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.FileReader;
+import java.io.*;
 
 public class OpMode {
-
   GamePad gamePad = new GamePad();
+  HardwareMap hardwareMap = new HardwareMap();
+  DcMotor motor1 = hardwareMap.get(DcMotor.class, "motor1");
 
   public OpMode() {
     init();
@@ -82,7 +90,6 @@ public class OpMode {
       @Override
       public void keyTyped(KeyEvent e) {
         // TODO Auto-generated method stub
-
       }
 
     });
