@@ -7,6 +7,10 @@ public class OpMode {
   public GamePad gamepad2;
   public HardwareMap hardwareMap;
 
+  public OpMode(){
+    telemtry = new Telemetry();
+    
+  }
   
   public void init() {
     // your code

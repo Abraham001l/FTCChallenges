@@ -3,6 +3,14 @@ public class GamePad {
     public KeyObj keyDown;
     public KeyObj keyRight;
     public KeyObj keyLeft;
+    public boolean a = false;
+    public boolean b = false;
+    public boolean dpad_down = false;
+    public boolean dpad_up = false;
+    public boolean dpad_left = false;
+    public boolean dpad_right = false;
+
+
 
     public GamePad(KeyObj keyup, KeyObj keydown, KeyObj keyright, KeyObj keyleft) {
         keyUp = keyup;
