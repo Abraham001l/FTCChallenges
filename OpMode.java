@@ -1,19 +1,13 @@
 import java.util.*;
 import javax.swing.*;
-
-import netscape.javascript.JSObject;
-
 import java.awt.event.KeyListener;
 import java.awt.event.KeyEvent;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.FileReader;
-import java.io.*;
 
 public class OpMode {
   GamePad gamePad = new GamePad();
-  HardwareMap hardwareMap = new HardwareMap();
-  DcMotor motor1 = hardwareMap.get(DcMotor.class, "motor1");
+  public HardwareMap hardwareMap = new HardwareMap();
+  public Telemetry telemetry = new Telemetry();
+  public GamePad gamepad1 = new GamePad();
 
   public OpMode() {
     init();
